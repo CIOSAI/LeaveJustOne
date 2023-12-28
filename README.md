@@ -2,6 +2,12 @@
 
 Leave Just One is 2D puzzle game made with Godot(>3.5, <4.0) by me. I have since dropped this project because I didn't enjoy the design. I grant you rights to make a game with the same mechanics given that you change all the other parts(see below).
 
+You can play it here on my itch page:
+
+https://ciosai.itch.io/leave-just-one
+
+As I mentioned it's incomplete.
+
 # Legality
 
 ## You may:
