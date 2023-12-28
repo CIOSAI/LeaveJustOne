@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Piece.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/PieceMouseControl.gd" type="Script" id=3]
+[ext_resource path="res://DeathParticle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Audio/FX/card_focused.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/FX/card_picked.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio/FX/card_set.wav" type="AudioStream" id=7]
+
+[node name="Piece" type="Sprite"]
+position = Vector2( 288, 600 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -32.0
+margin_top = -32.0
+margin_right = -32.0
+margin_bottom = -32.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="DeathParticle" parent="." instance=ExtResource( 4 )]
+
+[node name="FXfocused" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -14.607
+
+[node name="FXpicked" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -9.932
+
+[node name="FXset" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -9.932
+
+[connection signal="mouse_entered" from="Control" to="." method="_on_Control_mouse_entered"]
+[connection signal="mouse_entered" from="Control" to="Control" method="_on_Control_mouse_entered"]
+[connection signal="mouse_exited" from="Control" to="Control" method="_on_Control_mouse_exited"]
+[connection signal="picked_up" from="Control" to="." method="_on_Control_picked_up"]
+[connection signal="set_down" from="Control" to="." method="_on_Control_set_down"]

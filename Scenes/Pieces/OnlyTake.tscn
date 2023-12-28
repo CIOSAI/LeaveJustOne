@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Piece.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/MovePatterns/NowherePattern.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Sprites/card_onlytake.png" type="Texture" id=3]
+
+[node name="OnlyTake" instance=ExtResource( 1 )]
+texture = ExtResource( 3 )
+piece_index = 8
+move_pattern_path = NodePath("NowherePattern")
+
+[node name="Control" parent="." index="0"]
+margin_left = -72.0
+margin_top = -72.0
+margin_right = -72.0
+margin_bottom = -72.0
+
+[node name="NowherePattern" parent="." index="3" instance=ExtResource( 2 )]

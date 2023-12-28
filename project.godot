@@ -1,0 +1,117 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "LevelCard",
+"language": "GDScript",
+"path": "res://Scripts/LevelCard.gd"
+}, {
+"base": "Resource",
+"class": "LevelOrder",
+"language": "GDScript",
+"path": "res://LevelOrder.gd"
+}, {
+"base": "Node2D",
+"class": "MovePattern",
+"language": "GDScript",
+"path": "res://Scripts/MovePattern.gd"
+}, {
+"base": "Sprite",
+"class": "Piece",
+"language": "GDScript",
+"path": "res://Scripts/Piece.gd"
+}, {
+"base": "Resource",
+"class": "UnfoldedLevelState",
+"language": "GDScript",
+"path": "res://Scripts/UnfoldedLevelState.gd"
+} ]
+_global_script_class_icons={
+"LevelCard": "",
+"LevelOrder": "",
+"MovePattern": "",
+"Piece": "",
+"UnfoldedLevelState": ""
+}
+
+[application]
+
+config/name="Twenty One"
+run/main_scene="res://Scenes/Intro.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Globals="*res://Scripts/Globals.gd"
+LS="*res://Scripts/LevelState.gd"
+LevelSave="*res://Scripts/LevelSave.gd"
+
+[display]
+
+window/size/width=900
+window/size/height=900
+window/size/always_on_top=true
+window/size/test_width=600
+window/size/test_height=600
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[input]
+
+MouseClick={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+Retry={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Previous={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.164706, 0.152941, 0.227451, 1 )
+environment/default_environment="res://default_env.tres"

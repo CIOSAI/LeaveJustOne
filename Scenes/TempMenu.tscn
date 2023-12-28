@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Fonts/dead_hammer_48.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/TempMenu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Fonts/dead_hammer_24.tres" type="DynamicFont" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -508.0
+margin_top = -70.5
+margin_right = 508.0
+margin_bottom = 70.5
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+visible = false
+margin_left = 243.0
+margin_right = 419.0
+margin_bottom = 141.0
+custom_fonts/font = ExtResource( 3 )
+text = "edItor"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+margin_left = 442.0
+margin_right = 573.0
+margin_bottom = 141.0
+custom_fonts/font = ExtResource( 3 )
+text = "PLAY"
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+visible = false
+margin_left = 468.0
+margin_right = 683.0
+margin_bottom = 141.0
+custom_fonts/font = ExtResource( 3 )
+text = "arrange"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+margin_top = 5.0
+margin_right = 580.0
+margin_bottom = 140.0
+custom_fonts/font = ExtResource( 1 )
+text = "open level:"
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer2"]
+margin_left = 584.0
+margin_right = 942.0
+margin_bottom = 145.0
+custom_fonts/font = ExtResource( 1 )
+max_length = 2
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+placeholder_text = "99"
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button3" to="." method="_on_Button3_pressed"]

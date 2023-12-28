@@ -1,0 +1,175 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Sprites/floor_tile.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/dead_hammer_24.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/GridMap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/VictoryParticle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Hand.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/GameLevel.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/LevelMakerLevel.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Audio/FX/puzzle_solved.wav" type="AudioStream" id=8]
+[ext_resource path="res://Scripts/Intro.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Fonts/dead_hammer_18.tres" type="DynamicFont" id=10]
+
+[sub_resource type="TileSet" id=1]
+0/name = "floor_tile.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 144, 144 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "floor_tile.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 144, 0, 144, 144 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "floor_tile.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 288, 0, 144, 144 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "floor_tile.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 432, 0, 144, 144 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 0 ), 0.0, 4.0178, 0, 0, Vector2( 0.247458, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=3]
+curve = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 28.23
+gravity = Vector3( 0, 600, 0 )
+initial_velocity = 366.48
+initial_velocity_random = 0.54
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 96.56
+scale_curve = SubResource( 3 )
+color = Color( 0.886275, 0.886275, 0.886275, 1 )
+
+[node name="Intro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridMap" parent="." instance=ExtResource( 3 )]
+position = Vector2( 162, 162 )
+tile_set = SubResource( 1 )
+
+[node name="VictoryParticle" parent="GridMap" instance=ExtResource( 4 )]
+scale = Vector2( 2, 2 )
+process_material = SubResource( 4 )
+
+[node name="Hand" parent="." instance=ExtResource( 5 )]
+position = Vector2( 450, 815 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.026
+anchor_right = 0.5
+anchor_bottom = 0.026
+margin_left = -20.0
+margin_right = 20.0
+margin_bottom = 14.0
+grow_horizontal = 2
+custom_fonts/font = ExtResource( 2 )
+text = "leave just ONe"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hinter" type="Label" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -7.0
+margin_right = 20.0
+margin_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 10 )
+text = "YOU ARE USING
+{PLACEHOLDER}
+TO PLAY,
+YOU CAN ALWAYS CHANGE
+THIS IN THE SETTINGS
+
+CLICK TO CONTINUE"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameLevel" type="Node" parent="."]
+script = ExtResource( 6 )
+hand_path = NodePath("../Hand")
+fx_win_path = NodePath("../FXwin")
+
+[node name="Button" type="Button" parent="GameLevel"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelManager" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="FXwin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = 7.595
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="next_level" from="GameLevel" to="." method="_on_GameLevel_next_level"]
+[connection signal="won" from="GameLevel" to="." method="_on_GameLevel_won"]

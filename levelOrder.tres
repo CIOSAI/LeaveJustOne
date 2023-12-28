@@ -1,0 +1,53 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://LevelOrder.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+levelNames = [ "Leave Just One", "Trample", "Tango", "Zero", "Asymmetry", "Eight", "Little Hill", "Moose Circle", "Stand Off", "You Go First", "Bear Trap", "ZigZag", "The Other Way", "Poor Wasp", "Dime Square", "Wall", "Wasp Circle", "Yet So Far", "Ram Circle", "Windmill", "Hare Game", "Spiral", "Cent Square", "Funny Legs", "Six Fools", "Swamp Dance", "Magician's Trick", "Hide and Seek", "Hare Circle", "Ram Connect", "Offset", "Picking", "Wasp Connect", "Two More Wasps", "Trample 2", "It Stings", "Make Your Bear Trap", "Across", "Snake Burrow", "Hare Circle and Snake", "Diamond", "Kingfisher Game", "Bad Party", "Knight's Tour" ]
+levelIndices = {
+"Across": 37,
+"Asymmetry": 4,
+"Bad Party": 42,
+"Bear Trap": 10,
+"Cent Square": 22,
+"Diamond": 40,
+"Dime Square": 14,
+"Eight": 5,
+"Funny Legs": 23,
+"Hare Circle": 28,
+"Hare Circle and Snake": 39,
+"Hare Game": 20,
+"Hide and Seek": 27,
+"It Stings": 35,
+"Kingfisher Game": 41,
+"Knight's Tour": 43,
+"Leave Just One": 0,
+"Little Hill": 6,
+"Magician's Trick": 26,
+"Make Your Bear Trap": 36,
+"Moose Circle": 7,
+"Offset": 30,
+"Picking": 31,
+"Poor Wasp": 13,
+"Ram Circle": 18,
+"Ram Connect": 29,
+"Six Fools": 24,
+"Snake Burrow": 38,
+"Spiral": 21,
+"Stand Off": 8,
+"Swamp Dance": 25,
+"Tango": 2,
+"The Other Way": 12,
+"Trample": 1,
+"Trample 2": 34,
+"Two More Wasps": 33,
+"Wall": 15,
+"Wasp Circle": 16,
+"Wasp Connect": 32,
+"Windmill": 19,
+"Yet So Far": 17,
+"You Go First": 9,
+"Zero": 3,
+"ZigZag": 11
+}

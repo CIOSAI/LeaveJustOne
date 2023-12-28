@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Fonts/bench_nine_24.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/LevelCard.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/PieceMouseControl.gd" type="Script" id=3]
+
+[node name="LevelCard" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -36.0
+margin_top = -36.0
+margin_right = 36.0
+margin_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 72, 72 )
+custom_fonts/font = ExtResource( 1 )
+text = "hello world bruh"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="mouse_entered" from="Control" to="Control" method="_on_Control_mouse_entered"]
+[connection signal="mouse_exited" from="Control" to="Control" method="_on_Control_mouse_exited"]
+[connection signal="set_down" from="Control" to="." method="_on_Control_set_down"]

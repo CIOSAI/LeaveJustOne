@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Piece.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/MovePatterns/EverywherePattern.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/RemoverPiece.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Sprites/card_remover.png" type="Texture" id=4]
+
+[node name="Remover" instance=ExtResource( 1 )]
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+piece_index = 2
+move_pattern_path = NodePath("EverywherePattern")
+
+[node name="Control" parent="." index="0"]
+margin_left = -72.0
+margin_top = -72.0
+margin_right = -72.0
+margin_bottom = -72.0
+
+[node name="EverywherePattern" parent="." index="3" instance=ExtResource( 2 )]
